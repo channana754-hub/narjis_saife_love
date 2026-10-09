@@ -3,18 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>إلى سيف، من نرجس 🤎</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<title>إلى سيف من نرجس 🤍</title>
 
 <style>
-:root {
-  --wine: #350b20;
-  --wine2: #52132f;
-  --pink: #f5c4d5;
-  --cream: #fff5f2;
-  --gold: #e7c28a;
-}
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -22,688 +14,644 @@
 
 body {
   margin: 0;
+  padding: 20px;
+  background: linear-gradient(135deg, #310016, #65002e, #250011);
+  color: #fff0f5;
+  font-family: 'Cairo', sans-serif;
+  text-align: center;
   min-height: 100vh;
-  background:
-    radial-gradient(ellipse at top, #69233f 0%, transparent 55%),
-    linear-gradient(145deg, #210714, #481027 55%, #250817);
-  color: var(--cream);
-  font-family: 'Tajawal', sans-serif;
-  overflow-x: hidden;
 }
 
-button, input, textarea {
-  font-family: inherit;
+.container {
+  max-width: 750px;
+  margin: auto;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 220, 235, 0.25);
+  border-radius: 25px;
+  padding: 25px 18px;
+  margin: 22px 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+  color: #ffc4dc;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+p {
+  line-height: 2.1;
+  font-size: 17px;
+  white-space: pre-line;
+}
+
+.poetry {
+  font-family: 'Amiri', serif;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 2.1;
+  color: #ffe1ed;
 }
 
 button {
+  background: #ffb6d1;
+  color: #510020;
+  border: none;
+  padding: 13px 25px;
+  margin: 8px;
+  border-radius: 30px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+}
+
+button:hover {
+  background: #fff0f6;
+  transform: scale(1.03);
+}
+
+input {
+  width: 90%;
+  max-width: 350px;
+  padding: 14px;
+  margin: 12px;
+  border: 2px solid #ffb6d1;
+  border-radius: 15px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 17px;
+  text-align: center;
 }
 
 .hidden {
   display: none !important;
 }
 
-.hearts {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.heart {
-  position: absolute;
-  bottom: -50px;
-  color: #f6a8c6;
-  opacity: .35;
-  animation: floatUp linear infinite;
-}
-
-@keyframes floatUp {
-  from {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0;
-  }
-  15% { opacity: .45; }
-  to {
-    transform: translateY(-115vh) rotate(35deg);
-    opacity: 0;
-  }
-}
-
-.page {
-  position: relative;
-  z-index: 1;
-  width: min(92%, 760px);
-  margin: auto;
-  padding: 28px 0 55px;
-}
-
-.card {
-  background: rgba(255, 245, 242, .97);
-  color: #48172c;
-  border: 1px solid rgba(231,194,138,.7);
-  border-radius: 27px;
-  padding: 25px 20px;
-  margin: 20px 0;
-  box-shadow: 0 15px 45px rgba(0,0,0,.22);
-}
-
-.gold {
-  color: var(--gold);
-}
-
-.eyebrow {
-  letter-spacing: 2px;
-  font-size: 12px;
-  color: #f4c5d6;
-}
-
-.hero {
-  text-align: center;
-  padding: 35px 19px;
-  border-radius: 30px;
-  border: 1px solid rgba(231,194,138,.6);
-  background: linear-gradient(145deg, rgba(89,25,52,.88), rgba(37,7,23,.94));
-  box-shadow: 0 15px 50px rgba(0,0,0,.22);
-}
-
-.hero h1 {
-  font-family: 'Amiri', serif;
-  font-size: clamp(34px, 8vw, 55px);
-  line-height: 1.6;
-  color: #ffe6c5;
-  margin: 12px 0;
-  font-weight: 700;
-  text-shadow: 0 3px 18px rgba(0,0,0,.25);
-}
-
-.poem {
-  font-family: 'Amiri', serif;
-  font-size: clamp(21px, 5vw, 27px);
-  font-weight: 700;
-  line-height: 2.05;
-  color: #fff1e5;
-  margin: 22px auto;
-}
-
-.poem span {
-  display: block;
-}
-
-.gold-line {
-  width: 95px;
-  height: 2px;
-  margin: 20px auto;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-}
-
-.subtitle {
-  line-height: 2;
-  color: #f9dce5;
-}
-
-.label {
-  display: block;
-  margin: 20px 0 8px;
-  font-weight: 800;
-}
-
-.text-input {
-  width: 100%;
-  border: 1px solid #dfb5c6;
-  border-radius: 14px;
-  padding: 14px;
-  background: white;
-  color: #48172c;
-  font-size: 17px;
-  outline: none;
-}
-
-.text-input:focus,
-textarea:focus {
-  border-color: #9e4168;
-  box-shadow: 0 0 0 3px rgba(158,65,104,.12);
-}
-
-.btn {
-  display: inline-block;
-  border: 0;
-  border-radius: 999px;
-  padding: 13px 24px;
-  font-size: 16px;
-  font-weight: 800;
-  margin: 8px 4px;
-  transition: transform .2s, opacity .2s;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #792448, #4b102d);
-  color: white;
-  box-shadow: 0 7px 18px rgba(76,13,43,.2);
-}
-
-.btn-light {
-  background: #f9e1e9;
-  color: #591733;
-  border: 1px solid #e8bdce;
-}
-
-.btn-gold {
-  background: linear-gradient(135deg, #f3d7a8, #d6a75e);
-  color: #421329;
-}
-
-.center {
-  text-align: center;
-}
-
-.error {
-  min-height: 24px;
-  color: #a32d50;
-  font-weight: 800;
-  line-height: 1.8;
-}
-
 .bear {
-  font-size: 95px;
-  margin: 10px 0 0;
-  animation: bearWiggle 2s ease-in-out infinite;
-}
-
-@keyframes bearWiggle {
-  0%, 100% { transform: rotate(-3deg); }
-  50% { transform: rotate(3deg); }
-}
-
-.bear-title {
-  font-family: 'Amiri', serif;
-  font-size: 32px;
-  font-weight: 700;
-  margin: 8px 0;
-}
-
-.bear-message {
-  line-height: 2;
-  font-size: 18px;
-}
-
-.section-title {
-  text-align: center;
-  font-family: 'Amiri', serif;
-  font-size: clamp(28px, 7vw, 39px);
-  font-weight: 700;
-  color: #702341;
-  margin: 8px 0 15px;
-}
-
-.section-subtitle {
-  text-align: center;
-  line-height: 2;
-  color: #8b4c64;
-  margin-bottom: 22px;
-}
-
-.music-card {
-  text-align: center;
-  background: linear-gradient(145deg, #571631, #2f091d);
-  color: white;
-  border: 1px solid #bd8a9f;
-}
-
-.music-card h2 {
-  font-family: 'Amiri', serif;
-  font-size: 30px;
-  color: #ffe3b7;
-}
-
-.music-card p {
-  line-height: 1.9;
-  color: #f5d6e1;
-}
-
-.video-wrap {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 17px;
-  overflow: hidden;
-  background: #18040d;
-  margin-top: 15px;
-}
-
-.video-wrap iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.letter {
-  font-family: 'Amiri', serif;
-  font-size: clamp(21px, 5vw, 25px);
-  font-weight: 700;
-  line-height: 2.15;
-  color: #48172c;
-  white-space: pre-line;
-}
-
-.letter p {
-  margin: 0 0 19px;
-}
-
-.letter .final-line {
-  color: #85294e;
-  font-weight: 700;
+  font-size: 75px;
+  margin: 10px;
 }
 
 .counter {
-  text-align: center;
-  background: linear-gradient(150deg, #fff7f1, #f9dce7);
-  border: 2px solid #e9bdcf;
-}
-
-.counter-heading {
-  font-family: 'Amiri', serif;
-  font-size: 32px;
-  font-weight: 700;
-  color: #762443;
-}
-
-.counter-number {
-  font-family: 'Amiri', serif;
-  font-size: clamp(48px, 12vw, 70px);
-  line-height: 1.3;
-  font-weight: 700;
-  color: #9b315b;
-}
-
-.counter-caption {
-  color: #7b3651;
-  line-height: 2;
-}
-
-.time-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 9px;
-  margin: 22px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 .time-box {
+  background: rgba(255, 182, 209, 0.15);
+  border: 1px solid #ffb6d1;
   border-radius: 15px;
-  padding: 14px 5px;
-  background: white;
-  border: 1px solid #ebc5d3;
+  padding: 15px;
+  min-width: 105px;
 }
 
 .time-box strong {
   display: block;
-  font-size: clamp(20px, 5vw, 28px);
-  color: #772443;
+  font-size: 28px;
+  color: #ffc4dc;
 }
 
 .time-box span {
-  display: block;
-  margin-top: 5px;
-  font-size: 13px;
-  color: #96536d;
-}
-
-.memory-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: 14px;
-}
-
-.memory {
-  text-align: center;
-  background: #fff;
-  border: 1px solid #edd1dc;
-  border-radius: 18px;
-  padding: 10px;
-  overflow: hidden;
-}
-
-.memory img {
-  display: block;
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  border-radius: 12px;
-  background: #f8e5ec;
-}
-
-.memory h3 {
-  font-family: 'Amiri', serif;
-  font-size: 22px;
-  margin: 10px 0 3px;
-  color: #702341;
-}
-
-.memory p {
-  margin: 5px 0 8px;
-  line-height: 1.8;
-  color: #8b5267;
-}
-
-.photo-note {
   font-size: 14px;
-  line-height: 1.9;
-  color: #91546b;
-  text-align: center;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
   margin-top: 20px;
 }
 
+.gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 2px solid #ffb6d1;
+  background: #4c1029;
+}
+
 .question {
-  background: white;
-  border: 1px solid #edd0dc;
-  border-radius: 19px;
-  padding: 17px;
+  text-align: right;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 16px;
+  border-radius: 15px;
   margin: 15px 0;
 }
 
-.question h3 {
-  color: #63203c;
-  font-size: 18px;
-  line-height: 1.9;
-  margin: 0 0 12px;
+.question p {
+  font-weight: bold;
 }
 
-.question textarea {
-  width: 100%;
-  min-height: 100px;
-  resize: vertical;
-  border-radius: 13px;
-  border: 1px solid #e6bdce;
-  background: #fffafb;
-  padding: 12px;
+.question label {
+  display: block;
+  padding: 7px 0;
   font-size: 16px;
-  color: #48172c;
-  outline: none;
-  line-height: 1.8;
+  cursor: pointer;
 }
 
-.closing {
-  text-align: center;
-  background: linear-gradient(145deg, #571631, #2d081c);
-  border: 1px solid #c89aaa;
-  color: #fff1e7;
+.question input {
+  width: auto;
+  margin: 0 5px;
 }
 
-.closing h2 {
-  font-family: 'Amiri', serif;
-  font-size: 35px;
-  color: #ffe1b2;
-}
-
-.closing p {
-  font-family: 'Amiri', serif;
-  font-size: 23px;
-  font-weight: 700;
-  line-height: 2.1;
-}
-
-.signature {
-  color: #f6c6d8;
-  font-family: 'Amiri', serif;
-  font-size: 28px;
-  font-weight: 700;
+.small {
+  font-size: 14px;
+  color: #ffd7e6;
 }
 
 footer {
-  text-align: center;
-  color: #f1c5d5;
+  padding: 30px 10px;
+  color: #ffc4dc;
+}
+
+#message {
+  text-align: right;
+}
+
+#finalMessage {
   font-family: 'Amiri', serif;
-  font-size: 17px;
-  padding: 22px 5px;
+  font-size: 25px;
+  line-height: 2.1;
+  color: #ffe1ed;
 }
 
 @media (max-width: 450px) {
-  .card { padding: 20px 14px; }
-  .time-grid { gap: 5px; }
-  .time-box { padding: 12px 2px; }
-  .memory-grid { gap: 9px; }
-  .memory img { height: 140px; }
-  .memory h3 { font-size: 19px; }
+  body {
+    padding: 12px;
+  }
+
+  .card {
+    padding: 20px 13px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  .poetry {
+    font-size: 22px;
+  }
+
+  .gallery img {
+    height: 160px;
+  }
+
+  .time-box {
+    min-width: 90px;
+  }
 }
 </style>
 </head>
 
 <body>
+<div class="container">
 
-<div class="hearts" id="hearts"></div>
+  <section class="card">
+    <h1>إلى سيف، من نرجس 🤍</h1>
 
-<main class="page">
-
-  <!-- البداية الشعرية -->
-  <section class="hero" id="gate">
-    <div class="eyebrow">إِلَى مَنْ سَكَنَ القَلْبَ 🤎</div>
-
-    <h1>إلى سيف، من نرجس</h1>
-
-    <div class="gold-line"></div>
-
-    <div class="poem">
-      <span>يا مَنْ سَكَنْتَ القلبَ دونَ استئذانِ</span>
-      <span>وصِرْتَ في عُمْري أجملَ الأوطانِ</span>
-      <span>إنّي كتبتُ إليكَ نبضَ محبّتي</span>
-      <span>وجعلتُ حُرُوفي شاهدةً على حناني</span>
-      <span>فإذا وصلتَ إلى رسالتي، تمهّلْ</span>
-      <span>فبداخلِ الكلماتِ قلبُ إنسانِ</span>
+    <div class="poetry">
+      يا مَن سَكَنْتَ القلبَ دونَ استئذانِ<br>
+      وصِرتَ أجملَ ما أرى بزماني<br>
+      إن كانَ للحبِّ الجميلِ حكايةٌ<br>
+      فأنا أريدُكَ آخرَ العُنوانِ 🤍
     </div>
 
-    <div class="gold-line"></div>
-
-    <p class="subtitle">
-      ثمّة كلامٌ لا يُفتح بالمفاتيح، بل برمزٍ صغير…
-      وخلفه قلبٌ اختار أن يحكي لك كلّ ما فيه. 💌
+    <p>
+      أكو أشياء ما نكدر نحچيها بسهولة،
+      وأكو مشاعر مهما نحاول نوصفها تبقى أكبر من الكلام.
+      ولهذا سويتلك هالمكان الصغير،
+      حتى أگلك بيه شوية من الأشياء اللي بگلبي إلك. 🫂
     </p>
+  </section>
 
-    <label class="label" for="secretCode">🔐 أدخل الرمز السري يا سيف</label>
+  <section class="card" id="passwordSection">
+    <div class="bear">🧸🌷</div>
+    <h2>بس لحظة يا سيف!</h2>
+    <p>حتى تدخل لمكانك الخاص، لازم تعرف كلمة السر 🤍</p>
 
     <input
-      class="text-input"
-      id="secretCode"
       type="password"
-      placeholder="اكتب الرمز هنا..."
+      id="passwordInput"
+      placeholder="اكتب كلمة السر هنا"
       autocomplete="off"
     >
 
-    <button class="btn btn-gold" onclick="checkCode()">
-      افتح رسالتك يا حبيبي 🤎
-    </button>
+    <br>
+    <button onclick="checkPassword()">افتحلي الباب 💗</button>
 
-    <div id="codeError" class="error" aria-live="polite"></div>
-
-    <p style="font-size:13px;color:#f1c7d6;line-height:1.9">
-      تلميح: الرمز تعرفه نرجس، وتگدر تخليه كلمة خاصة بيناتكم. 🤫
-    </p>
+    <p class="small">تلميح صغير: اسمها هو كلمة السر 🌸</p>
+    <p id="passwordError" class="hidden"></p>
   </section>
 
+  <section class="card hidden" id="loveQuestion">
+    <div class="bear">🧸❤️</div>
+    <h2>سيف، عندي سؤال إلك!</h2>
+    <p>تحب نرجس؟ 🥹🤍</p>
 
-  <!-- الدب الكيوت -->
-  <section class="card center hidden" id="bearGate">
-    <div class="bear" id="bearEmoji">🧸</div>
+    <button onclick="answerLove(true)">إي أحبها هواية ❤️</button>
+    <button onclick="answerLove(false)">لا 😶</button>
 
-    <h2 class="bear-title" id="bearTitle">سؤال صغير يا سيف 💗</h2>
-
-    <p class="bear-message" id="bearMessage">
-      سيف، حبيبي… تحب نرجس؟ 🥹🤎
-      <br>
-      اختار جوابك، ترى الدب يراقبك! 👀
-    </p>
-
-    <div id="bearButtons">
-      <button class="btn btn-primary" onclick="answerLove(true)">
-        إي أحبها هواية ❤️
-      </button>
-
-      <button class="btn btn-light" onclick="answerLove(false)">
-        لا 🙈
-      </button>
-    </div>
-
-    <button
-      class="btn btn-gold hidden"
-      id="enterAnyway"
-      onclick="openLovePage()"
-    >
-      يلا افتح رسالتي هسه 🥹💌
+    <p id="bearResponse"></p>
+    <button class="hidden" id="continueButton" onclick="showWebsite()">
+      خليني أدخل 💌
     </button>
   </section>
 
+  <main id="websiteContent" class="hidden">
 
-  <!-- كل المحتوى لا يظهر إلا بعد الرمز -->
-  <div id="lovePage" class="hidden">
-
-    <!-- الأغنية -->
-    <section class="card music-card">
-      <div style="font-size:45px">🎵🤎🎵</div>
-      <h2>أغنية نرجس وسيف</h2>
-
-      <p>
-        قبل لا تقرأ كلامي، خلّي الموسيقى تحچي وياك…
-        لأن بعض المشاعر تعجز عنها الحروف. 🫂
-      </p>
-
-      <div class="video-wrap">
-        <iframe
-          id="musicFrame"
-          title="Die With a Smile"
-          src="about:blank"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <p style="font-size:14px">
-        إذا ما اشتغلت الأغنية تلقائياً، اضغط تشغيل ▶️
-      </p>
-    </section>
-
-
-    <!-- الرسالة -->
     <section class="card">
-      <h2 class="section-title">💌 كلام من گلب نرجس</h2>
-
-      <div class="gold-line"></div>
-
-      <div class="letter">
-
-        <p>هاي سيف، حبيبي، تدري شنو أكثر شي أتمناه؟ مو أشياء كبيرة، ولا أريد منك المستحيل، كل اللي أريده هو أحس إن گلبي بمكان آمن وياك. ❤️</p>
-
-        <p>أريد من أحچي وياك عن شي يوجعني، تسمعني حتى تفهمني، مو بس حتى ينتهي الحچي ونرجع لنفس الشي مرة ثانية.</p>
-
-        <p>سيف، آني أحبك، ويمكن أكثر مما أكدر أوصفلك بالكلام، بس مرات الحب وحده يتعب من يبقى يحاول يصلّح كلشي. آني هم عندي گلب، أتأثر وأزعل وأخاف، وحتى لو ضحكت وياك، مو معناها كلشي بداخلي صار بخير.</p>
-
-        <p>تدري شنو يوجعني؟ من أكون محتاجة أطمّن گلبي، وأبقى محتارة بين كلامك وبين الأشياء اللي تصير. آني ما أريد أعيش وياك بخوف، أريد أعيش وياك براحة، وأريد من أشوف اسمك يطلع بشاشتي أبتسم، مو أبقى أفكر وأحلل وأخاف من شي ما أعرفه.</p>
-
-        <p>آني ما أريدك إنسان ما يغلط، لأن محد كامل، بس أريدك من تغلط تعرف شلون تصلّح غلطك، ومن توعدني تحاول توفي بوعدك، ومن تشوفني متأذية من شي تسويه، تحاول تغيّره لأن مشاعري تهمك.</p>
-
-        <p>سيف، آني ما أريد أخسرك، بس هم ما أريد أخسر راحتي وأنا أحاول أحافظ عليك. لأن آني هم أستحق أعيش الحب بفرح واطمئنان، مو أبقى كل مرة أحاول ألمّ شتات گلبي حتى نكدر نكمل.</p>
-
-        <p>أريد نكون اثنين نحب بعض ونحافظ على بعض، مو واحد يتألم والثاني ما يعرف شكد الألم وصل.</p>
-
-        <p>أريدك تكون حبيبي وصديقي وأماني، الشخص اللي أكدر أحچي وياه بكلشي من دون ما أخاف، والشخص اللي من أختلف وياه أبقى واثقة إن الاحترام بيناتنا ما يتغيّر، وإن مشاكلنا ما تقلل من قيمة الحب اللي بيناتنا.</p>
-
-        <p>أحبك سيف، وهذا الشي مو سهل عليّ، ولهذا أتمنى تفهم إن كلامي مو لأن ما أريدك، بالعكس، لأن مشاعري تجاهك حقيقية، وأريد أعرف إذا نكدر نبني حبنا بطريقة تخلينا اثنينا مرتاحين وسعداء.</p>
-
-        <p>كل اللي أريده منك هو الصدق، والاهتمام، والثقة اللي تنبني بالأفعال، مو بالوعود وحدها. ما أريد وعود حلوة أفرح بيها اليوم وأرجع أبچي باچر، أريد أشوف تغيير حقيقي يخليني أحس إن كلامي وصلك وإن وجعي يهمك.</p>
-
-        <p>سيف، آني ما أطلب منك تكون مثالي، ولا أريد علاقتنا تكون من دون مشاكل، كل اللي أريده من نواجه مشكلة نواجهها سوه، ونحاول نحلها سوه، مو نبقى نكرر نفس الوجع وننتظر من الأيام تغيّر كلشي وحدها.</p>
-
-        <p class="final-line">آني أحبك، وأريدك بحياتي، بس أريد هم أحس إن إلي مكان آمن بحياتك، وإن گلبي اللي اختارك ما راح يبقى وحده يحاول ويحارب حتى يحافظ على هالعلاقة.</p>
-
-        <p>أتمنى يجي يوم أگدر أضم كل مخاوفي وأرتاح وياك، وأصدّق حبك من دون ما أحتاج كل مرة أدور على دليل يطمني.</p>
-
-        <p class="final-line">أحبك يا سيف، وكل اللي أتمناه إن حبنا يصير مكان نرتاح بيه اثنينا، مو مكان نتألم بيه وإحنا نحاول نثبت لبعض شكد نحب بعض. 🤍🫂</p>
-
-      </div>
+      <h1>هلا بحبيب نرجس 🤍</h1>
+      <div class="bear">🐻‍❄️💗</div>
+      <p>
+        هذا المكان إلك وحدك يا سيف،
+        بيه كلام من گلبي إلك،
+        وذكرياتنا، وأمنياتي إلنا،
+        وأشياء أتمنى تبقى ببالك دوم. 🫂
+      </p>
     </section>
 
+    <section class="card">
+      <h2>🎵 أغنيتنا</h2>
+      <p>Die With a Smile — Lady Gaga & Bruno Mars</p>
 
-    <!-- عداد العلاقة -->
-    <section class="card counter">
-      <div style="font-size:42px">💘🫂💘</div>
+      <iframe
+        width="100%"
+        height="180"
+        src="https://www.youtube-nocookie.com/embed/kPa7bsKwL-c?autoplay=1"
+        title="Die With a Smile"
+        frameborder="0"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen>
+      </iframe>
 
-      <h2 class="counter-heading">حكايتنا الحلوة</h2>
-
-      <p class="counter-caption">
-        كل يوم مرّ، وكل ذكرى انكتبت، وكل لحظة صارت جزء من حكايتنا. 🤎
+      <p class="small">
+        إذا ما اشتغلت الأغنية وحدها، اضغط تشغيل.
+        بعض المتصفحات تمنع التشغيل التلقائي. 🎶
       </p>
+    </section>
 
-      <div class="counter-number" id="daysCount">٠</div>
+    <section class="card">
+      <h2>⏳ شكد صارلنا سوه؟</h2>
+      <p>من يوم 15 شباط 2024، بدت حكايتنا الحلوة 🤍</p>
 
-      <div style="font-size:20px;font-weight:800;color:#8a2d50">
-        يوم من حكايتنا 💗
-      </div>
-
-      <div class="time-grid">
+      <div class="counter">
         <div class="time-box">
-          <strong id="years">٠</strong>
-          <span>سنة</span>
-        </div>
-
-        <div class="time-box">
-          <strong id="months">٠</strong>
-          <span>شهر</span>
-        </div>
-
-        <div class="time-box">
-          <strong id="days">٠</strong>
+          <strong id="days">0</strong>
           <span>يوم</span>
         </div>
 
         <div class="time-box">
-          <strong id="hours">٠</strong>
+          <strong id="hours">0</strong>
           <span>ساعة</span>
+        </div>
+
+        <div class="time-box">
+          <strong id="minutes">0</strong>
+          <span>دقيقة</span>
+        </div>
+
+        <div class="time-box">
+          <strong id="seconds">0</strong>
+          <span>ثانية</span>
         </div>
       </div>
 
-      <p class="counter-caption">
-        مو المهم شكد مرّ من الوقت، المهم شلون نحافظ على الحب والاحترام والثقة بكل يوم جاي. ❤️
+      <p class="small">
+        كل يوم يمر هو جزء من حكايتنا،
+        وأتمنى الأيام الجاية تكون أحنّ وأجمل إلنا. 🫂
       </p>
     </section>
 
-
-    <!-- الذكريات والصور -->
     <section class="card">
-      <h2 class="section-title">📸 ذكريات نرجس وسيف</h2>
-
-      <p class="section-subtitle">
-        أكو صور مو مجرد صور…
-        أكو لحظات كلما نشوفها نبتسم من گلبنا. 🥹💘
+      <h2>📸 ذكرياتنا الحلوة</h2>
+      <p>
+        كل صورة إلها حكاية،
+        وكل حكاية بيها لحظة أتمنى تبقى بقلبي للأبد. 🤍
       </p>
 
-      <div class="memory-grid">
+      <div class="gallery">
+        <img src="photo1.jpg" alt="الذكرى الأولى">
+        <img src="photo2.jpg" alt="الذكرى الثانية">
+        <img src="photo3.jpg" alt="الذكرى الثالثة">
+        <img src="photo4.jpg" alt="الذكرى الرابعة">
+      </div>
 
-        <div class="memory">
-          <img
-            src="photo1.jpg"
-            alt="الذكرى الأولى"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
-          >
-          <div style="display:none;font-size:65px;padding:30px 0">🌷</div>
-          <h3>أول ذكرى</h3>
-          <p>بداية حكاية إلها مكان بگلبي.</p>
+      <p class="small">
+        حتى تظهر صوركم الحقيقية، ارفع أربع صور للمستودع
+        بنفس الأسماء: photo1.jpg وphoto2.jpg وphoto3.jpg وphoto4.jpg.
+      </p>
+    </section>
+
+    <section class="card" id="message">
+      <h2>💌 رسالة من نرجس إلى سيف</h2>
+
+      <p>
+هاي سيف، حبيبي، تدري شنو أكثر شي أتمناه؟
+
+أتمنى يجي يوم أگعد بيه يمك، وأحس إن كل التعب والخوف والتفكير اللي مرّينا بيه صار ورا ظهرنا، وأحس إن عندي إنسان أگدر أرتاح وياه من دون ما أخاف من باچر، إنسان أگدر أحچي وياه عن كلشي بداخلي من دون ما أتردد أو أخاف إن كلامي ينفهم غلط.
+
+أريدك تعرف إن وجودك بحياتي مو شي عابر بالنسبة إلي. إنت إنسان إلك مكانة بگلبي، وإلك تفاصيل صغيرة هواية صارت مرتبطة بيك. مرات كلمة منك تكدر تفرحني، ومرات موقف صغير يبقى ببالي أكثر مما تتصور.
+
+بس بنفس الوقت، أريدك تعرف إن الحب وحده مو كافي إذا ما كان وياه أمان وثقة واهتمام. آني ما أريد أعيش بعلاقة كل يوم بيها أخاف من شي، أو أبقى أفكر إذا باچر راح يتغير كلشي لو لا. أريد علاقة أگدر أتنفس بيها براحة، وأحس بيها إن مشاعري إلها قيمة، وإن كلامي ينسمع، وإن زعلي مو شي بسيط ينتهي بكلمتين وبعدين يرجع نفس الوجع.
+
+سيف، آني ما أريد منك تكون إنسان كامل، لأن محد كامل، ولا أريدك ما تغلط أبد. كل اللي أريده إنك إذا غلطت تحاول تفهم شنو اللي وجعني، وإذا وعدتني بشي تحاول تلتزم بيه، وإذا اختلفنا ما نخلي الاختلاف يصير سبب حتى نجرح بعض.
+
+أريدنا نتعلم شلون نحچي ويا بعض حتى بأصعب الأوقات. إذا واحد من عدنا زعلان، الثاني يسمعه. وإذا واحد خايف، الثاني يطمنه بأفعاله مو بس بكلامه. وإذا صارت مشكلة، نواجهها سوه بدل ما نخليها تكبر بيناتنا.
+
+أريد أحس إنك تختارني مو بس بالأيام الحلوة، وإنما حتى بالأيام اللي نكون بيها متعبين وما نعرف شلون نعبر عن نفسنا. أريد أحس إن علاقتنا مكان نرجع إله حتى نرتاح، مو مكان نخاف منه أو نتعب بسببه.
+
+وأريدك تعرف إن الثقة بالنسبة إلي مو مراقبة، ولا أسئلة ما تخلص، ولا إن واحد من عدنا يضطر يثبت نفسه كل دقيقة. الثقة إن كل واحد يعرف قيمة الثاني، ويحترم مشاعره وحدوده، ويكون واضح وصادق وياه حتى من ما يكون الثاني موجود.
+
+آني أريد أحبك وأنا مطمئنة، وأريدك تحبني وإنت مرتاح. ما أريد أي واحد من عدنا يضيع نفسه حتى يحافظ على العلاقة. أريدنا نكبر ونتطور، ونكون سبب خير بحياة بعض، ونساعد بعض نصير أحسن مو نتعب أكثر.
+
+وإذا يوم صار بيناتنا خلاف، أتمنى نتذكر إن إحنا مو أعداء، وإن المشكلة مو معناها لازم واحد يفوز والثاني يخسر. مرات أهم شي مو منو الصح، وإنما شلون نطلع من المشكلة وإحنا بعدنا نحترم بعض ونحس بمشاعر بعض.
+
+وأتمنى ما تعتبر كلامي عتاب وبس، لأن ورا كل كلمة أكو شعور وأمنية. آني أحچي لأن أريد علاقتنا تكون أحسن، ولأن أتمنى الأيام الجاية تكون مختلفة عن الأيام اللي وجعتنا.
+
+أريد أفعال صغيرة بس حقيقية. اهتمام من قلبك، صدق حتى بالأشياء الصعبة، احترام من نختلف، ومحاولة حقيقية حتى ما نكرر نفس الأخطاء. مو لازم كلشي يتغير بيوم واحد، بس أريد أشوف إن عدنا رغبة حقيقية بالتغيير، وإن كلامنا مو مجرد وعود تنقال بوقت الزعل وبعدين ننساها.
+
+سيف، أتمنى من كل گلبي نكدر نبني شي حلو، شي بيه حب وراحة وأمان، شي من نتذكر بدايته نبتسم ونحس إن كل خطوة تعلمناها ساعدتنا نصير أنضج وأحنّ على بعض.
+
+وإذا أكو شي أريدك تتذكره من كل هالرسالة، فهو إن مشاعري تستحق تنسمع، ومشاعرك هم تستحق تنسمع. ما أريد واحد من عدنا يبقى ساكت حتى ما يزعل الثاني، ولا أريدنا نخاف من الصراحة. أريد الصراحة تكون جسر بيناتنا، مو سبب حتى نبتعد.
+
+أحبك يا سيف، وكل اللي أتمناه إن حبنا يصير مكان نرتاح بيه اثنينا، مو مكان نتألم بيه وإحنا نحاول نثبت لبعض شكد نحب بعض. 🤍🫂
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>🤍 أسئلة من نرجس إلى سيف</h2>
+
+      <p>
+        أريدك تجاوب من قلبك، مو حتى ترضيني،
+        وإنما حتى نفهم بعض أكثر. 🫂
+      </p>
+
+      <form id="questionsForm">
+
+        <div class="question">
+          <p>1. شنو تعني إلك الثقة بالعلاقة؟</p>
+          <label><input type="radio" name="q1" value="أمان وصدق"> أمان وصدق بيناتنا.</label>
+          <label><input type="radio" name="q1" value="كلام فقط"> كلام حلو وبس.</label>
+          <label><input type="radio" name="q1" value="أريد أفهم أكثر"> أريد أفهمها وأتعلم شلون أحافظ عليها.</label>
         </div>
 
-        <div class="memory">
-          <img
-            src="photo2.jpg"
-            alt="الذكرى الثانية"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
-          >
-          <div style="display:none;font-size:65px;padding:30px 0">🧸</div>
-          <h3>ضحكتنا الحلوة</h3>
-          <p>لحظة أتمنى تبقى بذاكرتنا.</p>
+        <div class="question">
+          <p>2. إذا نرجس گالتلك إن موقف منك وجعها، شراح تسوي؟</p>
+          <label><input type="radio" name="q2" value="أسمعها"> أسمعها وأحاول أفهم شعورها.</label>
+          <label><input type="radio" name="q2" value="أدافع عن نفسي"> أدافع عن نفسي من دون ما أسمعها.</label>
+          <label><input type="radio" name="q2" value="نحلها سوه"> نحچي بهدوء ونحاول نحل المشكلة سوه.</label>
         </div>
 
-        <div class="memory">
-          <img
-            src="photo3.jpg"
-            alt="الذكرى الثالثة
+        <div class="question">
+          <p>3. شنو رأيك بالوعود اللي تنوعد وما تتحقق؟</p>
+          <label><input type="radio" name="q3" value="تأثر على الثقة"> تأثر على الثقة ولازم نكون صادقين بوعودنا.</label>
+          <label><input type="radio" name="q3" value="مجرد كلام"> مو مهمة إذا كانت النية زينة.</label>
+          <label><input type="radio" name="q3" value="أثبت بالأفعال"> الأفضل أوعد باللي أگدر أسويه وأثبت بالأفعال.</label>
+        </div>
+
+        <div class="question">
+          <p>4. إذا اختلفنا، شلون تحب نتصرف؟</p>
+          <label><input type="radio" name="q4" value="بهدوء"> نحچي بهدوء ونسمع بعض.</label>
+          <label><input type="radio" name="q4" value="نتجاهل"> نتجاهل الموضوع ونتركه.</label>
+          <label><input type="radio" name="q4" value="وقت ثم حوار"> ناخذ وقت نهدأ وبعدها نرجع نحچي.</label>
+        </div>
+
+        <div class="question">
+          <p>5. شنو معنى الاهتمام بالنسبة إلك؟</p>
+          <label><input type="radio" name="q5" value="تفاصيل وأفعال"> أفعال وتفاصيل صغيرة تبين إن الشخص مهم.</label>
+          <label><input type="radio" name="q5" value="رسائل فقط"> رسائل وكلام حلو فقط.</label>
+          <label><input type="radio" name="q5" value="حسب الظروف"> يختلف حسب الظروف، بس لازم نحاول.</label>
+        </div>
+
+        <div class="question">
+          <p>6. إذا نرجس كانت متضايقة وتحتاجك، شراح تسوي؟</p>
+          <label><input type="radio" name="q6" value="أسمعها وأساندها"> أسمعها وأساندها على گد ما أگدر.</label>
+          <label><input type="radio" name="q6" value="أنتظرها تهدأ"> أتركها وحدها حتى تهدأ من دون ما أسألها.</label>
+          <label><input type="radio" name="q6" value="أسألها شتحتاج"> أسألها شنو تحتاج مني وأحاول أكون وياها.</label>
+        </div>
+
+        <div class="question">
+          <p>7. برأيك، الحب وحده يكفي حتى تستمر العلاقة؟</p>
+          <label><input type="radio" name="q7" value="حب وثقة واحترام"> لا، نحتاج حب وثقة واحترام وجهد من الطرفين.</label>
+          <label><input type="radio" name="q7" value="الحب يكفي"> إي، إذا نحب بعض فهذا يكفي.</label>
+          <label><input type="radio" name="q7" value="نتعلم سوه"> الحب مهم، والباقي نتعلمه ونبنيه سوه.</label>
+        </div>
+
+        <div class="question">
+          <p>8. إذا كررت نفس الغلطة أكثر من مرة، شنو المفروض تسوي؟</p>
+          <label><input type="radio" name="q8" value="أتحمل المسؤولية"> أتحمل مسؤوليتي وأغير تصرفي.</label>
+          <label><input type="radio" name="q8" value="أعتذر فقط"> أعتذر وأتوقع كلشي يرجع طبيعي.</label>
+          <label><input type="radio" name="q8" value="أفهم السبب"> أفهم ليش تكررت وأحط خطوات حتى ما أعيدها.</label>
+        </div>
+
+        <div class="question">
+          <p>9. شلون نكدر نحافظ على الاحترام حتى وإحنا معصبين؟</p>
+          <label><input type="radio" name="q9" value="ما نجرح بعض"> ما نجرح بعض بالكلام حتى لو اختلفنا.</label>
+          <label><input type="radio" name="q9" value="نحچي بأي طريقة"> من نعصب عادي نحچي بأي طريقة.</label>
+          <label><input type="radio" name="q9" value="نهدأ أول"> نهدأ إذا احتجنا، وبعدين نكمل الحچي باحترام.</label>
+        </div>
+
+        <div class="question">
+          <p>10. شنو تتمنى لعلاقتنا بالمستقبل؟</p>
+          <label><input type="radio" name="q10" value="أمان واستقرار"> أتمنى أمان وثقة واستقرار للطرفين.</label>
+          <label><input type="radio" name="q10" value="نبقى مثل ما إحنا"> أتمنى نبقى مثل ما إحنا من دون تغيير.</label>
+          <label><input type="radio" name="q10" value="نكبر ونتطور"> أتمنى نتعلم من أخطائنا ونكبر سوه.</label>
+        </div>
+
+        <button type="button" onclick="showAnswers()">
+          خليني أشوف إجاباتي 🤍
+        </button>
+
+      </form>
+
+      <div id="answersResult" class="hidden">
+        <h2>إجاباتك يا سيف 💌</h2>
+        <p id="answersText"></p>
+        <p>
+          الأهم مو إن إجاباتنا تكون مثالية،
+          الأهم نكون صادقين ويا نفسنا،
+          ونحاول نترجم كلامنا إلى أفعال. 🤍
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="bear">🧸💐</div>
+      <h2>وآخر شي، يا سيف...</h2>
+
+      <p id="finalMessage">
+        أتمنى من الله إن الأيام الجاية تحمل إلنا راحة أكثر،
+        وإن كل واحد من عدنا يلقى بالثاني شخص يسمعه ويحترمه ويطمنه.
+
+        أتمنى ما ننسى إن الحب مو بس كلمة نكررها،
+        الحب هم طريقة تعاملنا، وصدقنا، واهتمامنا،
+        ومحاولتنا حتى ما نجرح الشخص اللي نريده يبقى بحياتنا.
+
+        إذا نريد نكمل سوه، خلينا نبني علاقتنا على أساس قوي،
+        خطوة بخطوة، وبصدق من الطرفين.
+
+        أحبك يا سيف، وأتمنى إلنا كل الخير والراحة والسعادة. 🤍🫂
+      </p>
+
+      <button onclick="showSurprise()">عندي إلك مفاجأة صغيرة 🎁</button>
+
+      <p id="surprise" class="hidden">
+        المفاجأة هي إنك وصلت لنهاية هالمكان،
+        بس أتمنى تكون بداية لأيام أحلى،
+        بيها حب صادق وثقة وراحة للاثنين. 🤍🧸
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    صُنعت بمحبة لنرجس وسيف 🤍
+    <br>
+    <span class="small">كل الحقوق محفوظة للمشاعر الحلوة 🌷</span>
+  </footer>
+
+</div>
+
+<script>
+const SECRET_CODE = "نرجس";
+
+/* تاريخ بداية العلاقة: 15 فبراير 2024 */
+const RELATIONSHIP_START = "2024-02-15";
+
+function checkPassword() {
+  const enteredPassword =
+    document.getElementById("passwordInput").value.trim();
+
+  const error = document.getElementById("passwordError");
+
+  if (enteredPassword === SECRET_CODE) {
+    document.getElementById("passwordSection").classList.add("hidden");
+    document.getElementById("loveQuestion").classList.remove("hidden");
+    error.classList.add("hidden");
+  } else {
+    error.textContent = "مو هي هاي كلمة السر يا سيف، حاول مرة ثانية 🥹";
+    error.classList.remove("hidden");
+  }
+}
+
+document.getElementById("passwordInput").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    checkPassword();
+  }
+});
+
+function answerLove(lovesHer) {
+  const response = document.getElementById("bearResponse");
+  const continueButton = document.getElementById("continueButton");
+
+  if (lovesHer) {
+    response.textContent =
+      "يييي! 🥹❤️ نرجس هسه تبتسم من الفرحة، تعال افتح رسالتك!";
+  } else {
+    response.textContent =
+      "أوووه 🥺💔 الدبدوب حزن شويّة... بس راح يخليك تدخل وتقرا الرسالة للنهاية.";
+  }
+
+  continueButton.classList.remove("hidden");
+}
+
+function showWebsite() {
+  document.getElementById("loveQuestion").classList.add("hidden");
+  document.getElementById("websiteContent").classList.remove("hidden");
+
+  updateCounter();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+function updateCounter() {
+  const start = new Date(RELATIONSHIP_START + "T00:00:00");
+  const now = new Date();
+
+  let difference = now.getTime() - start.getTime();
+
+  if (difference < 0) {
+    document.getElementById("days").textContent = "0";
+    document.getElementById("hours").textContent = "0";
+    document.getElementById("minutes").textContent = "0";
+    document.getElementById("seconds").textContent = "0";
+    return;
+  }
+
+  const totalSeconds = Math.floor(difference / 1000);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = hours;
+  document.getElementById("minutes").textContent = minutes;
+  document.getElementById("seconds").textContent = seconds;
+}
+
+setInterval(updateCounter, 1000);
+
+function showAnswers() {
+  const form = document.getElementById("questionsForm");
+  const result = document.getElementById("answersResult");
+  const answersText = document.getElementById("answersText");
+
+  const questionNames = [
+    "q1", "q2", "q3", "q4", "q5",
+    "q6", "q7", "q8", "q9", "q10"
+  ];
+
+  let output = "";
+  let answeredCount = 0;
+
+  questionNames.forEach(function(name, index) {
+    const selected = form.querySelector(
+      'input[name="' + name + '"]:checked'
+    );
+
+    if (selected) {
+      answeredCount++;
+      output += (index + 1) + ". " + selected.value + "\n\n";
+    } else {
+      output += (index + 1) + ". ما جاوبت على هذا السؤال بعد.\n\n";
+    }
+  });
+
+  if (answeredCount === 0) {
+    alert("جاوب على سؤال واحد على الأقل يا سيف 🤍");
+    return;
+  }
+
+  answersText.textContent = output;
+  result.classList.remove("hidden");
+
+  result.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+function showSurprise() {
+  document.getElementById("surprise").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
