@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نرجس وسيف 💗</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffe4ef, #f5e4ff);
+  color: #82415f;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+header { padding: 35px 15px 10px; }
+
+h1 {
+  font-size: 35px;
+  color: #e45c91;
+}
+
+.card {
+  background: rgba(255,255,255,0.85);
+  margin: 20px auto;
+  padding: 25px 18px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 480px;
+  box-shadow: 0 8px 25px #e8a8ca55;
+}
+
+button {
+  background: #f28ab6;
+  color: white;
+  border: none;
+  padding: 13px 22px;
+  border-radius: 25px;
+  font-size: 16px;
+  margin: 8px;
+  cursor: pointer;
+}
+
+input {
+  padding: 12px;
+  border: 2px solid #f5b5d0;
+  border-radius: 12px;
+  width: 90%;
+  margin: 10px;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  animation: float 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+#message { line-height: 2; }
+
+footer { padding: 25px; }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div style="font-size:45px">🎀💗🎀</div>
+  <h1> </h1>نرجس وسيفي</h1>
+  <p>حكاية صغيرة، ومشاعر أكبر من الكلام 🥹💕</p>
+</header>
+
+<section class="card">
+  <h2>💌 رسالة إلكم</h2>
+  <p>
+    أكو أشخاص وجودهم يخلّي الأيام أحلى،
+    وأكو ذكريات تبقى بالقلب مهما مرّ الوقت.
+    هاي مساحة صغيرة تجمع الحكايات واللحظات الحلوة
+    اللي تستحق تنحفظ بحب. 🌷
+  </p>
+  <button onclick="showLetter()">افتحوا المفاجأة 💗</button>
+  <p id="message" hidden>
+    أتمنى تبقى الذكريات الحلوة مصدر ابتسامة إلكم،
+    وتبقون دائماً صادقين وواضحين ويا بعض. 🫂💕
+  </p>
+</section>
+
+<section class="card">
+  <h2>⏳ عداد العلاقة</h2>
+  <p>اختاري تاريخ بداية العلاقة:</p>
+  <input type="date" id="startDate">
+  <div id="counter">اختاري التاريخ حتى نحسب المدة 💗</div>
+</section>
+
+<section class="card">
+  <h2>🧸 ذكرياتنا الحلوة</h2>
+  <input id="memoryInput" placeholder="اكتبي ذكرى حلوة...">
+  <button onclick="addMemory()">أضيفي ذكرى 💕</button>
+  <div id="memories"></div>
+</section>
+
+<section class="card">
+  <h2>💗 أسئلة عن الحكاية</h2>
+  <p id="question">شنو أحلى ذكرى تتمنون تعيشوها مرة ثانية؟ 🌷</p>
+  <button onclick="nextQuestion()">السؤال الجاي 🎀</button>
+</section>
+
+<footer>
+  <p>مصنوع بمحبة لشمس وعلي 💗</p>
+  <p>♡ كل ذكرى حلوة تستحق مكان بالقلب ♡</p>
+</footer>
+
+<script>
+function showLetter() {
+  document.getElementById("message").hidden = false;
+}
+
+function updateCounter() {
+  const value = document.getElementById("startDate").value;
+  const output = document.getElementById("counter");
+
+  if (!value) return;
+
+  const start = new Date(value + "T00:00:00");
+  const now = new Date();
+
+  if (start > now) {
+    output.textContent = "اختاري تاريخ اليوم أو تاريخ أقدم 💗";
+    return;
+  }
+
+  const days = Math.floor((now - start) / 86400000);
+  const hours = Math.floor((now - start) / 3600000) % 24;
+  const minutes = Math.floor((now - start) / 60000) % 60;
+
+  output.innerHTML =
+    "من ذاك اليوم مرّت 💕<br>" +
+    days + " يوم 🌷<br>" +
+    hours + " ساعة و " + minutes + " دقيقة";
+}
+
+document.getElementById("startDate").addEventListener("change", updateCounter);
+
+const questions = [
+  "شنو أحلى ذكرى تتمنون تعيشوها مرة ثانية؟ 🌷",
+  "شنو أول شي لفت انتباهك بالشخص الثاني؟ 💗",
+  "شنو الأغنية اللي تذكركم ببعض؟ 🎶",
+  "شنو المكان اللي تتمنون تزوروه سوه؟ 🧸",
+  "شنو الشي البسيط اللي يرسم ابتسامة على وجوهكم؟ 💌",
+  "شنو أجمل موقف خلاكم تضحكون من قلب؟ 😂💕"
+];
+
+let q = 0;
+
+function nextQuestion() {
+  q = (q + 1) % questions.length;
+  document.getElementById("question").textContent = questions[q];
+}
+
+function addMemory() {
+  const input = document.getElementById("memoryInput");
+  const value = input.value.trim();
+
+  if (!value) {
+    alert("اكتبي ذكرى حلوة أولاً يا حلوة 💗");
+    return;
+  }
+
+  const item = document.createElement("p");
+  item.textContent = "🌷 " + value;
+  document.getElementById("memories").appendChild(item);
+  input.value = "";
+}
+
+for (let i = 0; i < 12; i++) {
+  const heart = document.createElement("span");
+  heart.className = "heart";
+  heart.textContent = ["💗", "💕", "♡", "🎀"][i % 4];
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDelay = Math.random() * 8 + "s";
+  heart.style.fontSize = (15 + Math.random() * 18) + "px";
+  document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
