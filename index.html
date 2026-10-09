@@ -3,680 +3,707 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#4a071b">
+<title>إلى سيف، من نرجس 🤎</title>
 
-<title>إلى سيف، من نرجس ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800&display=swap');
-
 :root {
-  --wine: #4a071b;
-  --dark: #28040f;
-  --rose: #e8a0b4;
-  --light: #fff0f4;
-  --gold: #f4d5a1;
+  --wine: #350b20;
+  --wine2: #52132f;
+  --pink: #f5c4d5;
+  --cream: #fff5f2;
+  --gold: #e7c28a;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
-  color: var(--light);
-  font-family: 'Tajawal', sans-serif;
-  background:
-    radial-gradient(ellipse at top, #76213b 0%, transparent 55%),
-    linear-gradient(150deg, #28040f, #570b24 55%, #310613);
   min-height: 100vh;
+  background:
+    radial-gradient(ellipse at top, #69233f 0%, transparent 55%),
+    linear-gradient(145deg, #210714, #481027 55%, #250817);
+  color: var(--cream);
+  font-family: 'Tajawal', sans-serif;
   overflow-x: hidden;
 }
 
-button, textarea {
-  font: inherit;
+button, input, textarea {
+  font-family: inherit;
 }
 
 button {
   cursor: pointer;
 }
 
-.heart {
-  position: fixed;
-  bottom: -35px;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0;
-  animation: floatHeart 9s linear infinite;
+.hidden {
+  display: none !important;
 }
 
-@keyframes floatHeart {
-  10% { opacity: .65; }
-  100% {
-    transform: translateY(-115vh) rotate(30deg);
+.hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: -50px;
+  color: #f6a8c6;
+  opacity: .35;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% { opacity: .45; }
+  to {
+    transform: translateY(-115vh) rotate(35deg);
     opacity: 0;
   }
 }
 
-header {
-  text-align: center;
-  padding: 65px 18px 35px;
-  position: relative;
-}
-
-.eyebrow {
-  color: var(--gold);
-  letter-spacing: 2px;
-  font-size: 13px;
-}
-
-h1 {
-  font-family: 'Amiri', serif;
-  font-size: clamp(38px, 9vw, 66px);
-  line-height: 1.5;
-  margin: 12px 0;
-  color: #ffe3eb;
-  text-shadow: 0 0 30px #ff9fbd55;
-}
-
-.subtitle {
-  color: #f5c6d4;
-  line-height: 2;
-  max-width: 560px;
-  margin: 0 auto 25px;
-}
-
-button.primary,
-button.secondary {
-  border: none;
-  border-radius: 30px;
-  padding: 13px 23px;
-  margin: 6px;
-  transition: .25s;
-}
-
-.primary {
-  background: linear-gradient(135deg, #f6c8d6, #d77b9a);
-  color: #41091c;
-  font-weight: 800;
-  box-shadow: 0 8px 25px #17010a55;
-}
-
-.secondary {
-  background: #ffffff10;
-  border: 1px solid #e8a0b477 !important;
-  color: #ffe7ee;
-}
-
-button:hover {
-  transform: translateY(-2px);
-}
-
-.container {
-  width: min(850px, 92%);
-  margin: 0 auto;
+.page {
   position: relative;
   z-index: 1;
+  width: min(92%, 760px);
+  margin: auto;
+  padding: 28px 0 55px;
 }
 
 .card {
-  background: linear-gradient(145deg, #ffffff0e, #ffffff06);
-  border: 1px solid #e8a0b433;
-  border-radius: 25px;
-  padding: clamp(20px, 5vw, 35px);
-  margin: 22px 0;
-  box-shadow: 0 15px 40px #16010933;
-  backdrop-filter: blur(8px);
-}
-
-.section-title {
-  font-family: 'Amiri', serif;
-  font-size: 30px;
-  color: #ffd4e0;
-  text-align: center;
-  margin: 0 0 10px;
-}
-
-.section-intro {
-  text-align: center;
-  color: #edc4d0;
-  line-height: 2;
-  margin-bottom: 25px;
-}
-
-.divider {
-  text-align: center;
-  color: var(--gold);
-  letter-spacing: 7px;
+  background: rgba(255, 245, 242, .97);
+  color: #48172c;
+  border: 1px solid rgba(231,194,138,.7);
+  border-radius: 27px;
+  padding: 25px 20px;
   margin: 20px 0;
+  box-shadow: 0 15px 45px rgba(0,0,0,.22);
 }
 
-.letter {
-  font-family: 'Tajawal', sans-serif;
-  font-size: 17px;
-  line-height: 2.35;
-  color: #fff0f4;
-  white-space: normal;
+.gold {
+  color: var(--gold);
 }
 
-.letter strong {
-  color: #ffc3d5;
+.eyebrow {
+  letter-spacing: 2px;
+  font-size: 12px;
+  color: #f4c5d6;
 }
 
-.signature {
+.hero {
+  text-align: center;
+  padding: 35px 19px;
+  border-radius: 30px;
+  border: 1px solid rgba(231,194,138,.6);
+  background: linear-gradient(145deg, rgba(89,25,52,.88), rgba(37,7,23,.94));
+  box-shadow: 0 15px 50px rgba(0,0,0,.22);
+}
+
+.hero h1 {
   font-family: 'Amiri', serif;
-  text-align: left;
-  font-size: 25px;
-  color: var(--gold);
-  margin-top: 25px;
+  font-size: clamp(34px, 8vw, 55px);
+  line-height: 1.6;
+  color: #ffe6c5;
+  margin: 12px 0;
+  font-weight: 700;
+  text-shadow: 0 3px 18px rgba(0,0,0,.25);
 }
 
-.question {
-  background: #ffffff09;
-  border: 1px solid #e8a0b42b;
-  border-radius: 18px;
-  padding: 17px;
-  margin: 14px 0;
-  transition: .25s;
+.poem {
+  font-family: 'Amiri', serif;
+  font-size: clamp(21px, 5vw, 27px);
+  font-weight: 700;
+  line-height: 2.05;
+  color: #fff1e5;
+  margin: 22px auto;
 }
 
-.question:hover {
-  border-color: #e8a0b488;
-  background: #ffffff0d;
+.poem span {
+  display: block;
 }
 
-.question h3 {
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.9;
-  margin: 0 0 12px;
-  color: #fff0f4;
+.gold-line {
+  width: 95px;
+  height: 2px;
+  margin: 20px auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
-.question h3 span {
-  color: var(--gold);
-  margin-left: 7px;
+.subtitle {
+  line-height: 2;
+  color: #f9dce5;
 }
 
-textarea {
+.label {
+  display: block;
+  margin: 20px 0 8px;
+  font-weight: 800;
+}
+
+.text-input {
   width: 100%;
-  min-height: 75px;
-  resize: vertical;
-  color: white;
-  background: #21030d88;
-  border: 1px solid #e8a0b444;
-  border-radius: 12px;
-  padding: 12px;
+  border: 1px solid #dfb5c6;
+  border-radius: 14px;
+  padding: 14px;
+  background: white;
+  color: #48172c;
+  font-size: 17px;
   outline: none;
 }
 
+.text-input:focus,
 textarea:focus {
-  border-color: var(--rose);
+  border-color: #9e4168;
+  box-shadow: 0 0 0 3px rgba(158,65,104,.12);
 }
 
-textarea::placeholder {
-  color: #cda9b5;
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 24px;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 8px 4px;
+  transition: transform .2s, opacity .2s;
 }
 
-.music-box {
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #792448, #4b102d);
+  color: white;
+  box-shadow: 0 7px 18px rgba(76,13,43,.2);
+}
+
+.btn-light {
+  background: #f9e1e9;
+  color: #591733;
+  border: 1px solid #e8bdce;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #f3d7a8, #d6a75e);
+  color: #421329;
+}
+
+.center {
   text-align: center;
 }
 
-.music-note {
-  font-size: 36px;
-  margin-bottom: 10px;
+.error {
+  min-height: 24px;
+  color: #a32d50;
+  font-weight: 800;
+  line-height: 1.8;
 }
 
-.music-box p {
-  color: #edc4d0;
+.bear {
+  font-size: 95px;
+  margin: 10px 0 0;
+  animation: bearWiggle 2s ease-in-out infinite;
+}
+
+@keyframes bearWiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+.bear-title {
+  font-family: 'Amiri', serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+.bear-message {
   line-height: 2;
+  font-size: 18px;
 }
 
-.video {
-  position: relative;
+.section-title {
+  text-align: center;
+  font-family: 'Amiri', serif;
+  font-size: clamp(28px, 7vw, 39px);
+  font-weight: 700;
+  color: #702341;
+  margin: 8px 0 15px;
+}
+
+.section-subtitle {
+  text-align: center;
+  line-height: 2;
+  color: #8b4c64;
+  margin-bottom: 22px;
+}
+
+.music-card {
+  text-align: center;
+  background: linear-gradient(145deg, #571631, #2f091d);
+  color: white;
+  border: 1px solid #bd8a9f;
+}
+
+.music-card h2 {
+  font-family: 'Amiri', serif;
+  font-size: 30px;
+  color: #ffe3b7;
+}
+
+.music-card p {
+  line-height: 1.9;
+  color: #f5d6e1;
+}
+
+.video-wrap {
   width: 100%;
   aspect-ratio: 16 / 9;
   border-radius: 17px;
   overflow: hidden;
-  margin-top: 20px;
-  background: #20030b;
+  background: #18040d;
+  margin-top: 15px;
 }
 
-.video iframe {
-  position: absolute;
-  inset: 0;
+.video-wrap iframe {
   width: 100%;
   height: 100%;
   border: 0;
 }
 
-.surprise {
-  text-align: center;
-}
-
-#surpriseMessage {
-  display: none;
-  margin-top: 22px;
+.letter {
   font-family: 'Amiri', serif;
-  color: #ffe0e9;
-  font-size: 23px;
-  line-height: 2;
-  animation: appear .6s ease;
+  font-size: clamp(21px, 5vw, 25px);
+  font-weight: 700;
+  line-height: 2.15;
+  color: #48172c;
+  white-space: pre-line;
 }
 
-@keyframes appear {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+.letter p {
+  margin: 0 0 19px;
+}
+
+.letter .final-line {
+  color: #85294e;
+  font-weight: 700;
+}
+
+.counter {
+  text-align: center;
+  background: linear-gradient(150deg, #fff7f1, #f9dce7);
+  border: 2px solid #e9bdcf;
+}
+
+.counter-heading {
+  font-family: 'Amiri', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #762443;
+}
+
+.counter-number {
+  font-family: 'Amiri', serif;
+  font-size: clamp(48px, 12vw, 70px);
+  line-height: 1.3;
+  font-weight: 700;
+  color: #9b315b;
+}
+
+.counter-caption {
+  color: #7b3651;
+  line-height: 2;
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+  margin: 22px 0;
+}
+
+.time-box {
+  border-radius: 15px;
+  padding: 14px 5px;
+  background: white;
+  border: 1px solid #ebc5d3;
+}
+
+.time-box strong {
+  display: block;
+  font-size: clamp(20px, 5vw, 28px);
+  color: #772443;
+}
+
+.time-box span {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+  color: #96536d;
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+}
+
+.memory {
+  text-align: center;
+  background: #fff;
+  border: 1px solid #edd1dc;
+  border-radius: 18px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.memory img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #f8e5ec;
+}
+
+.memory h3 {
+  font-family: 'Amiri', serif;
+  font-size: 22px;
+  margin: 10px 0 3px;
+  color: #702341;
+}
+
+.memory p {
+  margin: 5px 0 8px;
+  line-height: 1.8;
+  color: #8b5267;
+}
+
+.photo-note {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #91546b;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.question {
+  background: white;
+  border: 1px solid #edd0dc;
+  border-radius: 19px;
+  padding: 17px;
+  margin: 15px 0;
+}
+
+.question h3 {
+  color: #63203c;
+  font-size: 18px;
+  line-height: 1.9;
+  margin: 0 0 12px;
+}
+
+.question textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  border-radius: 13px;
+  border: 1px solid #e6bdce;
+  background: #fffafb;
+  padding: 12px;
+  font-size: 16px;
+  color: #48172c;
+  outline: none;
+  line-height: 1.8;
+}
+
+.closing {
+  text-align: center;
+  background: linear-gradient(145deg, #571631, #2d081c);
+  border: 1px solid #c89aaa;
+  color: #fff1e7;
+}
+
+.closing h2 {
+  font-family: 'Amiri', serif;
+  font-size: 35px;
+  color: #ffe1b2;
+}
+
+.closing p {
+  font-family: 'Amiri', serif;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 2.1;
+}
+
+.signature {
+  color: #f6c6d8;
+  font-family: 'Amiri', serif;
+  font-size: 28px;
+  font-weight: 700;
 }
 
 footer {
   text-align: center;
-  padding: 35px 15px 50px;
-  color: #e7afc0;
-  line-height: 2;
-}
-
-footer strong {
-  display: block;
-  color: #ffcedc;
+  color: #f1c5d5;
   font-family: 'Amiri', serif;
-  font-size: 22px;
+  font-size: 17px;
+  padding: 22px 5px;
 }
 
-.small {
-  font-size: 13px;
-  color: #d4a5b4;
-}
-
-@media (max-width: 480px) {
-  header {
-    padding-top: 45px;
-  }
-
-  .card {
-    border-radius: 20px;
-  }
-
-  .letter {
-    font-size: 16px;
-    line-height: 2.2;
-  }
-
-  .question h3 {
-    font-size: 16px;
-  }
+@media (max-width: 450px) {
+  .card { padding: 20px 14px; }
+  .time-grid { gap: 5px; }
+  .time-box { padding: 12px 2px; }
+  .memory-grid { gap: 9px; }
+  .memory img { height: 140px; }
+  .memory h3 { font-size: 19px; }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="eyebrow">♡ حكاية من گلبي إلى گلبك ♡</div>
+<div class="hearts" id="hearts"></div>
 
-  <h1>إلى سيف،<br>من نرجس ❤️</h1>
+<main class="page">
 
-  <p class="subtitle">
-    سيف، أكو حچي بگلبي من زمان،<br>
-    واليوم أريدك تقراه بهدوء، وكأنّي گاعدة يمك وأحچي وياك.
-  </p>
+  <!-- البداية الشعرية -->
+  <section class="hero" id="gate">
+    <div class="eyebrow">إِلَى مَنْ سَكَنَ القَلْبَ 🤎</div>
 
-  <button class="primary"
-    onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">
-    افتح رسالتي إلك 💌
-  </button>
+    <h1>إلى سيف، من نرجس</h1>
 
-  <button class="secondary"
-    onclick="document.getElementById('questions').scrollIntoView({behavior:'smooth'})">
-    عندي أسئلة إلك 🫂
-  </button>
-</header>
+    <div class="gold-line"></div>
 
-<main class="container">
-
-  <!-- رسالة نرجس إلى سيف -->
-
-  <section class="card" id="letter">
-
-    <h2 class="section-title">سيف، حبيبي... ❤️‍🩹</h2>
-
-    <div class="divider">♡ ♡ ♡</div>
-
-    <div class="letter">
-
-      سيف، حبيبي، تدري شنو أكثر شي أتمناه؟
-      مو أشياء كبيرة، ولا أريد منك المستحيل،
-      كل اللي أريده هو أحس إن گلبي بمكان آمن وياك. ❤️
-
-      <br><br>
-
-      أريد من أحچي وياك عن شي يوجعني،
-      تسمعني حتى تفهمني، مو بس حتى ينتهي الحچي
-      ونرجع لنفس الشي مرة ثانية.
-
-      <br><br>
-
-      سيف، آني أحبك، ويمكن أكثر مما أكدر أوصفلك بالكلام،
-      بس مرات الحب وحده يتعب من يبقى يحاول يصلّح كلشي.
-      آني هم عندي گلب، أتأثر وأزعل وأخاف،
-      وحتى لو ضحكت وياك، مو معناها كلشي بداخلي صار بخير.
-
-      <br><br>
-
-      تدري شنو يوجعني؟
-      من أكون محتاجة أطمّن گلبي، وأبقى محتارة بين كلامك
-      وبين الأشياء اللي تصير.
-      آني ما أريد أعيش وياك بخوف، أريد أعيش وياك براحة،
-      وأريد من أشوف اسمك يطلع بشاشتي أبتسم،
-      مو أبقى أفكر وأحلل وأخاف من شي ما أعرفه.
-
-      <br><br>
-
-      آني ما أريدك إنسان ما يغلط، لأن محد كامل،
-      بس أريدك من تغلط تعرف شلون تصلّح غلطك،
-      ومن توعدني تحاول توفي بوعدك،
-      ومن تشوفني متأذية من شي تسويه،
-      تحاول تغيّره لأن مشاعري تهمك.
-
-      <br><br>
-
-      سيف، آني ما أريد أخسرك،
-      بس هم ما أريد أخسر راحتي وأنا أحاول أحافظ عليك.
-      لأن آني هم أستحق أعيش الحب بفرح واطمئنان،
-      مو أبقى كل مرة أحاول ألمّ شتات گلبي حتى نكدر نكمل.
-
-      <br><br>
-
-      أريد نكون اثنين نحب بعض ونحافظ على بعض،
-      مو واحد يتألم والثاني ما يعرف شكد الألم وصل.
-
-      <br><br>
-
-      أريدك تكون حبيبي وصديقي وأماني،
-      الشخص اللي أكدر أحچي وياه بكلشي من دون ما أخاف،
-      والشخص اللي من أختلف وياه أبقى واثقة
-      إن الاحترام بيناتنا ما يتغيّر،
-      وإن مشاكلنا ما تقلل من قيمة الحب اللي بيناتنا.
-
-      <br><br>
-
-      أحبك سيف، وهذا الشي مو سهل عليّ،
-      ولهذا أتمنى تفهم إن كلامي مو لأن ما أريدك،
-      بالعكس، لأن مشاعري تجاهك حقيقية،
-      وأريد أعرف إذا نكدر نبني حبنا بطريقة
-      تخلينا اثنينا مرتاحين وسعداء.
-
-      <br><br>
-
-      كل اللي أريده منك هو الصدق، والاهتمام،
-      والثقة اللي تنبني بالأفعال، مو بالوعود وحدها.
-      ما أريد وعود حلوة أفرح بيها اليوم وأرجع أبچي باچر،
-      أريد أشوف تغيير حقيقي يخليني أحس إن كلامي وصلك
-      وإن وجعي يهمك.
-
-      <br><br>
-
-      سيف، آني ما أطلب منك تكون مثالي،
-      ولا أريد علاقتنا تكون من دون مشاكل،
-      كل اللي أريده من نواجه مشكلة نواجهها سوه،
-      ونحاول نحلها سوه، مو نبقى نكرر نفس الوجع
-      وننتظر من الأيام تغيّر كلشي وحدها.
-
-      <br><br>
-
-      <strong>
-      آني أحبك، وأريدك بحياتي، بس أريد هم أحس
-      إن إلي مكان آمن بحياتك، وإن گلبي اللي اختارك
-      ما راح يبقى وحده يحاول ويحارب حتى يحافظ على هالعلاقة.
-      </strong>
-
-      <br><br>
-
-      أتمنى يجي يوم أگدر أضم كل مخاوفي وأرتاح وياك،
-      وأصدّق حبك من دون ما أحتاج كل مرة أدور على دليل يطمني.
-
-      <br><br>
-
-      أحبك يا سيف، وكل اللي أتمناه إن حبنا يصير مكان
-      نرتاح بيه اثنينا، مو مكان نتألم بيه
-      وإحنا نحاول نثبت لبعض شكد نحب بعض. 🤍🫂
-
+    <div class="poem">
+      <span>يا مَنْ سَكَنْتَ القلبَ دونَ استئذانِ</span>
+      <span>وصِرْتَ في عُمْري أجملَ الأوطانِ</span>
+      <span>إنّي كتبتُ إليكَ نبضَ محبّتي</span>
+      <span>وجعلتُ حُرُوفي شاهدةً على حناني</span>
+      <span>فإذا وصلتَ إلى رسالتي، تمهّلْ</span>
+      <span>فبداخلِ الكلماتِ قلبُ إنسانِ</span>
     </div>
 
-    <div class="divider">♡ ∞ ♡</div>
+    <div class="gold-line"></div>
 
-    <div class="signature">
-      من نرجس، اللي تتمنى گلـبها يرتاح وياك. ❤️
-    </div>
-
-  </section>
-
-  <!-- أسئلة نرجس إلى سيف -->
-
-  <section class="card" id="questions">
-
-    <h2 class="section-title">سيف، عندي أسئلة إلك 💌</h2>
-
-    <p class="section-intro">
-      أريد إجاباتك من گلـبك، مو بس الكلام اللي تتوقع
-      يرضيني. أريد أفهمك وتفهمني أكثر. 🤍
+    <p class="subtitle">
+      ثمّة كلامٌ لا يُفتح بالمفاتيح، بل برمزٍ صغير…
+      وخلفه قلبٌ اختار أن يحكي لك كلّ ما فيه. 💌
     </p>
 
-    <div class="question">
-      <h3><span>01 ♡</span>
-      سيف، إذا گلتلك أكو شي بگلبي يوجعني،
-      راح تسمعني حتى تفهمني لو راح تعتبرني أبالغ؟</h3>
-      <textarea placeholder="جاوبني من گلـبك يا سيف..."></textarea>
-    </div>
+    <label class="label" for="secretCode">🔐 أدخل الرمز السري يا سيف</label>
 
-    <div class="question">
-      <h3><span>02 ♡</span>
-      إذا صار بيناتنا خلاف، تكدر تحاول تفهم وجهة نظري
-      حتى لو تختلف وياي؟</h3>
-      <textarea placeholder="أريد أعرف شلون تفكر..."></textarea>
-    </div>
+    <input
+      class="text-input"
+      id="secretCode"
+      type="password"
+      placeholder="اكتب الرمز هنا..."
+      autocomplete="off"
+    >
 
-    <div class="question">
-      <h3><span>03 ♡</span>
-      سيف، شنو معنى الثقة بالنسبة إلك؟
-      وشلون نكدر نبنيها بيناتنا؟</h3>
-      <textarea placeholder="شنو تعني الثقة إلك؟"></textarea>
-    </div>
-
-    <div class="question">
-      <h3><span>04 ♡</span>
-      إذا وعدتني بشي وما گدرت توفي بوعدك،
-      راح تصارحني لو تنتظرني أكتشف وحدي؟</h3>
-      <textarea placeholder="جاوبني بصراحة..."></textarea>
-    </div>
-
-    <div class="question">
-      <h3><span>05 ♡</span>
-      إذا شفتني متغيرة أو ساكتة،
-      راح تحاول تعرف شبيّه لو تنتظرني آني أبادر؟</h3>
-      <textarea placeholder="شنو راح تسوي يا سيف؟"></textarea>
-    </div>
-
-    <div class="question">
-      <h3><span>06 ♡</span>
-      سيف، تكدر تتقبل من أحچي وياك عن شي يضايقني
-      بتصرفاتك من دون ما يتحول الحچي إلى مشكلة أكبر؟</h3>
-      <textarea placeholder="أريد نكدر نحچي عن كلشي..."></textarea>
-    </div>
-
-    <div class="question">
-      <h3><span>07 ♡</span>
-      إذا جرحتني من دون قصد،
-      شنو راح تسوي حتى تصلّح اللي صار؟</h3>
-      <textarea placeholder="شلون نصلّح الزعل سوه؟"></textarea>
-    </div>
-
-    <div class="question">
-      <h3><span>08 ♡</span>
-      برأيك، الحب وحده يكفي حتى تستمر العلاقة،
-      لو لازم وياه صدق واحترام واهتمام؟</h3>
-      <textarea placeholder="شنو رأيك بالحب الحقيقي؟"></textarea>
-    </div>
-
-    <div class="question">
-      <h3><span>09 ♡</span>
-      سيف، شلون تكدر تثبتلي بأفعالك
-      إن آني أگدر أعتمد عليك؟</h3>
-      <textarea placeholder="أريد أشوف الحب بأفعالك..."></textarea>
-    </div>
-
-    <div class="question">
-      <h3><span>10 ♡</span>
-      إذا إجت فترة وصارت الثقة بيناتنا ضعيفة،
-      مستعد نتعاون سوه حتى نرجع نبنيها؟</h3>
-      <textarea placeholder="خلينا نحچي عن مستقبلنا..."></textarea>
-    </div>
-
-    <div class="divider">♡ ♡ ♡</div>
-
-    <p class="section-intro">
-      سيف، مو كل سؤال يعني شك،
-      ومو كل عتاب يعني ابتعاد.
-      مرات السؤال يكون محاولة حتى نحافظ على شي غالي على گلـبنا. ❤️
-    </p>
-
-  </section>
-
-  <!-- الأغنية -->
-
-  <section class="card music-box" id="music">
-
-    <div class="music-note">🎵</div>
-
-    <h2 class="section-title">أغنية إلنا ❤️</h2>
-
-    <p>
-      سيف، خلي هالأغنية تشتغل وإنت تقرأ كلامي،
-      يمكن الموسيقى توصل إحساس ما گدرت أوصّله بالحچي. 🥹
-    </p>
-
-    <h3 style="color:#f4d5a1">
-      Die With a Smile
-    </h3>
-
-    <div class="video">
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/kPa7bsKwL-c"
-        title="Die With a Smile"
-        loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
-    </div>
-
-    <p class="small">
-      اضغط على زر التشغيل داخل الفيديو حتى تسمع الأغنية 🎶
-    </p>
-
-  </section>
-
-  <!-- المفاجأة -->
-
-  <section class="card surprise">
-
-    <h2 class="section-title">سيف، عندك مفاجأة صغيرة 🎁</h2>
-
-    <p class="section-intro">
-      أكو رسالة مخبّيتها إلك...
-      مستعد تفتحها؟
-    </p>
-
-    <button class="primary" onclick="openSurprise()">
-      افتح المفاجأة يا سيف 💗
+    <button class="btn btn-gold" onclick="checkCode()">
+      افتح رسالتك يا حبيبي 🤎
     </button>
 
-    <div id="surpriseMessage">
-      سيف، من بين كل الحچي اللي كتبته،
-      أريدك تتذكر شغلة وحدة...
+    <div id="codeError" class="error" aria-live="polite"></div>
 
-      <br><br>
-
-      آني ما أريد حب مثالي،
-      أريد حب صادق.
-      ما أريد وعود ما إلها نهاية،
-      أريد أفعال تطمّن گلبي.
-
-      <br><br>
-
-      أريد من نختلف نسمع بعض،
-      ومن نغلط نتعلم،
-      ومن نتعب نعرف شلون نحچي ونفهم بعض.
-
-      <br><br>
-
-      أحبك يا سيف،
-      وأتمنى نكون سبب راحة لبعض،
-      ونبني علاقتنا بالصدق والثقة والاهتمام.
-
-      <br><br>
-
-      <strong>من نرجس، بكل الحب اللي بگلـبها إلك. 🤍🫂</strong>
-    </div>
-
+    <p style="font-size:13px;color:#f1c7d6;line-height:1.9">
+      تلميح: الرمز تعرفه نرجس، وتگدر تخليه كلمة خاصة بيناتكم. 🤫
+    </p>
   </section>
 
-</main>
 
-<footer>
-  <strong>إلى سيف، من نرجس ❤️</strong>
+  <!-- الدب الكيوت -->
+  <section class="card center hidden" id="bearGate">
+    <div class="bear" id="bearEmoji">🧸</div>
 
-  كل كلمة هنا إلها إحساس،
-  وكل رسالة مكتوبة من گلـب يتمنى ينفهم.
+    <h2 class="bear-title" id="bearTitle">سؤال صغير يا سيف 💗</h2>
 
-  <div style="margin-top:12px">
-    ♡ مصنوعة بمحبة ♡
-  </div>
-</footer>
+    <p class="bear-message" id="bearMessage">
+      سيف، حبيبي… تحب نرجس؟ 🥹🤎
+      <br>
+      اختار جوابك، ترى الدب يراقبك! 👀
+    </p>
 
-<script>
-function createHeart() {
-  const heart = document.createElement('div');
-  heart.className = 'heart';
+    <div id="bearButtons">
+      <button class="btn btn-primary" onclick="answerLove(true)">
+        إي أحبها هواية ❤️
+      </button>
 
-  const symbols = ['♡', '♥', '💗', '💕', '✨'];
-  heart.textContent = symbols[
-    Math.floor(Math.random() * symbols.length)
-  ];
+      <button class="btn btn-light" onclick="answerLove(false)">
+        لا 🙈
+      </button>
+    </div>
 
-  heart.style.left = Math.random() * 100 + 'vw';
-  heart.style.fontSize = (14 + Math.random() * 22) + 'px';
-  heart.style.animationDuration = (7 + Math.random() * 6) + 's';
+    <button
+      class="btn btn-gold hidden"
+      id="enterAnyway"
+      onclick="openLovePage()"
+    >
+      يلا افتح رسالتي هسه 🥹💌
+    </button>
+  </section>
 
-  document.body.appendChild(heart);
 
-  setTimeout(() => heart.remove(), 14000);
-}
+  <!-- كل المحتوى لا يظهر إلا بعد الرمز -->
+  <div id="lovePage" class="hidden">
 
-setInterval(createHeart, 800);
+    <!-- الأغنية -->
+    <section class="card music-card">
+      <div style="font-size:45px">🎵🤎🎵</div>
+      <h2>أغنية نرجس وسيف</h2>
 
-function openSurprise() {
-  const message = document.getElementById('surpriseMessage');
+      <p>
+        قبل لا تقرأ كلامي، خلّي الموسيقى تحچي وياك…
+        لأن بعض المشاعر تعجز عنها الحروف. 🫂
+      </p>
 
-  if (message.style.display === 'block') {
-    message.style.display = 'none';
-  } else {
-    message.style.display = 'block';
-    message.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center'
-    });
+      <div class="video-wrap">
+        <iframe
+          id="musicFrame"
+          title="Die With a Smile"
+          src="about:blank"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
 
-    for (let i = 0; i < 12; i++) {
-      setTimeout(createHeart, i * 120);
-    }
-  }
-}
-</script>
+      <p style="font-size:14px">
+        إذا ما اشتغلت الأغنية تلقائياً، اضغط تشغيل ▶️
+      </p>
+    </section>
 
-</body>
-</html>
+
+    <!-- الرسالة -->
+    <section class="card">
+      <h2 class="section-title">💌 كلام من گلب نرجس</h2>
+
+      <div class="gold-line"></div>
+
+      <div class="letter">
+
+        <p>هاي سيف، حبيبي، تدري شنو أكثر شي أتمناه؟ مو أشياء كبيرة، ولا أريد منك المستحيل، كل اللي أريده هو أحس إن گلبي بمكان آمن وياك. ❤️</p>
+
+        <p>أريد من أحچي وياك عن شي يوجعني، تسمعني حتى تفهمني، مو بس حتى ينتهي الحچي ونرجع لنفس الشي مرة ثانية.</p>
+
+        <p>سيف، آني أحبك، ويمكن أكثر مما أكدر أوصفلك بالكلام، بس مرات الحب وحده يتعب من يبقى يحاول يصلّح كلشي. آني هم عندي گلب، أتأثر وأزعل وأخاف، وحتى لو ضحكت وياك، مو معناها كلشي بداخلي صار بخير.</p>
+
+        <p>تدري شنو يوجعني؟ من أكون محتاجة أطمّن گلبي، وأبقى محتارة بين كلامك وبين الأشياء اللي تصير. آني ما أريد أعيش وياك بخوف، أريد أعيش وياك براحة، وأريد من أشوف اسمك يطلع بشاشتي أبتسم، مو أبقى أفكر وأحلل وأخاف من شي ما أعرفه.</p>
+
+        <p>آني ما أريدك إنسان ما يغلط، لأن محد كامل، بس أريدك من تغلط تعرف شلون تصلّح غلطك، ومن توعدني تحاول توفي بوعدك، ومن تشوفني متأذية من شي تسويه، تحاول تغيّره لأن مشاعري تهمك.</p>
+
+        <p>سيف، آني ما أريد أخسرك، بس هم ما أريد أخسر راحتي وأنا أحاول أحافظ عليك. لأن آني هم أستحق أعيش الحب بفرح واطمئنان، مو أبقى كل مرة أحاول ألمّ شتات گلبي حتى نكدر نكمل.</p>
+
+        <p>أريد نكون اثنين نحب بعض ونحافظ على بعض، مو واحد يتألم والثاني ما يعرف شكد الألم وصل.</p>
+
+        <p>أريدك تكون حبيبي وصديقي وأماني، الشخص اللي أكدر أحچي وياه بكلشي من دون ما أخاف، والشخص اللي من أختلف وياه أبقى واثقة إن الاحترام بيناتنا ما يتغيّر، وإن مشاكلنا ما تقلل من قيمة الحب اللي بيناتنا.</p>
+
+        <p>أحبك سيف، وهذا الشي مو سهل عليّ، ولهذا أتمنى تفهم إن كلامي مو لأن ما أريدك، بالعكس، لأن مشاعري تجاهك حقيقية، وأريد أعرف إذا نكدر نبني حبنا بطريقة تخلينا اثنينا مرتاحين وسعداء.</p>
+
+        <p>كل اللي أريده منك هو الصدق، والاهتمام، والثقة اللي تنبني بالأفعال، مو بالوعود وحدها. ما أريد وعود حلوة أفرح بيها اليوم وأرجع أبچي باچر، أريد أشوف تغيير حقيقي يخليني أحس إن كلامي وصلك وإن وجعي يهمك.</p>
+
+        <p>سيف، آني ما أطلب منك تكون مثالي، ولا أريد علاقتنا تكون من دون مشاكل، كل اللي أريده من نواجه مشكلة نواجهها سوه، ونحاول نحلها سوه، مو نبقى نكرر نفس الوجع وننتظر من الأيام تغيّر كلشي وحدها.</p>
+
+        <p class="final-line">آني أحبك، وأريدك بحياتي، بس أريد هم أحس إن إلي مكان آمن بحياتك، وإن گلبي اللي اختارك ما راح يبقى وحده يحاول ويحارب حتى يحافظ على هالعلاقة.</p>
+
+        <p>أتمنى يجي يوم أگدر أضم كل مخاوفي وأرتاح وياك، وأصدّق حبك من دون ما أحتاج كل مرة أدور على دليل يطمني.</p>
+
+        <p class="final-line">أحبك يا سيف، وكل اللي أتمناه إن حبنا يصير مكان نرتاح بيه اثنينا، مو مكان نتألم بيه وإحنا نحاول نثبت لبعض شكد نحب بعض. 🤍🫂</p>
+
+      </div>
+    </section>
+
+
+    <!-- عداد العلاقة -->
+    <section class="card counter">
+      <div style="font-size:42px">💘🫂💘</div>
+
+      <h2 class="counter-heading">حكايتنا الحلوة</h2>
+
+      <p class="counter-caption">
+        كل يوم مرّ، وكل ذكرى انكتبت، وكل لحظة صارت جزء من حكايتنا. 🤎
+      </p>
+
+      <div class="counter-number" id="daysCount">٠</div>
+
+      <div style="font-size:20px;font-weight:800;color:#8a2d50">
+        يوم من حكايتنا 💗
+      </div>
+
+      <div class="time-grid">
+        <div class="time-box">
+          <strong id="years">٠</strong>
+          <span>سنة</span>
+        </div>
+
+        <div class="time-box">
+          <strong id="months">٠</strong>
+          <span>شهر</span>
+        </div>
+
+        <div class="time-box">
+          <strong id="days">٠</strong>
+          <span>يوم</span>
+        </div>
+
+        <div class="time-box">
+          <strong id="hours">٠</strong>
+          <span>ساعة</span>
+        </div>
+      </div>
+
+      <p class="counter-caption">
+        مو المهم شكد مرّ من الوقت، المهم شلون نحافظ على الحب والاحترام والثقة بكل يوم جاي. ❤️
+      </p>
+    </section>
+
+
+    <!-- الذكريات والصور -->
+    <section class="card">
+      <h2 class="section-title">📸 ذكريات نرجس وسيف</h2>
+
+      <p class="section-subtitle">
+        أكو صور مو مجرد صور…
+        أكو لحظات كلما نشوفها نبتسم من گلبنا. 🥹💘
+      </p>
+
+      <div class="memory-grid">
+
+        <div class="memory">
+          <img
+            src="photo1.jpg"
+            alt="الذكرى الأولى"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+          >
+          <div style="display:none;font-size:65px;padding:30px 0">🌷</div>
+          <h3>أول ذكرى</h3>
+          <p>بداية حكاية إلها مكان بگلبي.</p>
+        </div>
+
+        <div class="memory">
+          <img
+            src="photo2.jpg"
+            alt="الذكرى الثانية"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+          >
+          <div style="display:none;font-size:65px;padding:30px 0">🧸</div>
+          <h3>ضحكتنا الحلوة</h3>
+          <p>لحظة أتمنى تبقى بذاكرتنا.</p>
+        </div>
+
+        <div class="memory">
+          <img
+            src="photo3.jpg"
+            alt="الذكرى الثالثة
